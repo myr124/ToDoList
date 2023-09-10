@@ -14,7 +14,7 @@ const App = () => {
   // setTodoItems([...todoItems,item]);
   return (
     <div>
-      <input ref={inputRef}></input>
+      
       <Button onClick={()=>{
         const name: string | undefined= inputRef.current?.value;
         if (name) {
@@ -24,6 +24,7 @@ const App = () => {
           // setTodoItems([todo,...todoItems]);
         }
       }}></Button>
+      <input ref={inputRef}></input>
       <TodoListComponent list={todoItems}/>
       {/*ask fofr name and desc and call setTodoItems and add rhe new itm to the end*/}
     </div>
