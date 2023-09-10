@@ -2,7 +2,7 @@
 
 // const [ToDoitems, SetTodoItems] = useState([]);
 
-export type TodoItem = { name: string; desc: string };
+export type TodoItem = { name: string};
 
 interface ITodoProps {
   item: TodoItem;
@@ -13,14 +13,13 @@ interface ITodoListProps {
 }
 
 export const TodoListComponent = ({ list }: ITodoListProps) => {
-  return list.map((e) => <TodoComponent item={e} />);
+  return list.map((e,i) => <TodoComponent item={e} key={i}/>);
 };
 
 export const TodoComponent = ({ item }: ITodoProps) => {
   return (
     <div>
       <strong>{item.name}</strong>
-      {item.desc}
     </div>
   );
 };
