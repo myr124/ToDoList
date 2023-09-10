@@ -18,8 +18,13 @@ export const TodoListComponent = ({ list }: ITodoListProps) => {
 
 export const TodoComponent = ({ item }: ITodoProps) => {
   return (
-    <div>
-      <strong>{item.name}</strong>
+    
+    <div className="form-check">
+    <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+    <label className="form-check-label" htmlFor="flexCheckDefault">
+    {item.name}
+    </label>
     </div>
+  
   );
 };
