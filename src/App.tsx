@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import Button from "./components/Button";
 import { TodoListComponent, TodoItem } from "./components/ToDo";
-
+import ButtonUsage from "./components/MaterialButton";
 
 const App = () => {
   const [todoItems, setTodoItems] = useState<TodoItem[]>([]);
@@ -27,6 +27,7 @@ const App = () => {
       <input ref={inputRef}></input>
       <TodoListComponent list={todoItems}/>
       {/*ask fofr name and desc and call setTodoItems and add rhe new itm to the end*/}
+      <ButtonUsage />
     </div>
   );
 };
