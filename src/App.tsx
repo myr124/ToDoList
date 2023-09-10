@@ -1,7 +1,6 @@
 import { useState, useRef } from "react";
-import Button from "./components/Button";
 import { TodoListComponent, TodoItem } from "./components/ToDo";
-import ButtonUsage from "./components/MaterialButton";
+import MatButton from "./components/MatButton";
 
 const App = () => {
   const [todoItems, setTodoItems] = useState<TodoItem[]>([]);
@@ -15,7 +14,7 @@ const App = () => {
   return (
     <div>
       
-      <Button onClick={()=>{
+      <MatButton onClick={()=>{
         const name: string | undefined= inputRef.current?.value;
         if (name) {
           const todo: TodoItem = {name};
@@ -23,11 +22,10 @@ const App = () => {
           setTodoItems([todo,...todoItems]);
           // setTodoItems([todo,...todoItems]);
         }
-      }}></Button>
+      }}></MatButton>
       <input ref={inputRef}></input>
       <TodoListComponent list={todoItems}/>
       {/*ask fofr name and desc and call setTodoItems and add rhe new itm to the end*/}
-      <ButtonUsage />
     </div>
   );
 };
