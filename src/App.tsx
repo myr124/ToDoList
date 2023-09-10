@@ -12,6 +12,7 @@ const App = () => {
   return (
     <div>
       <input></input>
+      <button></button>
       {/*ask fofr name and desc and call setTodoItems and add rhe new itm to the end*/}
     </div>
   );
