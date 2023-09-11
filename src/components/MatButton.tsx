@@ -8,7 +8,7 @@ interface Props {
 const MatButton = ({ onClick }: Props) => {
   return (
     <div>
-      <Button variant="contained" onClick={onClick}>
+      <Button variant="text" onClick={onClick} >
         + New List Entry
       </Button>
     </div>
