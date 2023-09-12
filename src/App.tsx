@@ -12,20 +12,22 @@ const App = () => {
   // const item2: TodoItem = {name, desc};
   // setTodoItems([...todoItems,item]);
   return (
-    <div className="justify-center flex">
+    <div className="justify-center flex flex-col">
       
-      <MatButton onClick={()=>{
-        const name: string | undefined= inputRef.current?.value;
-        if (name) {
-          const todo: TodoItem = {name};
-          // setTodoItems((prev)=>[todo,...prev]);
-          setTodoItems([todo,...todoItems]);
-          // setTodoItems([todo,...todoItems]);
-        }
-      }}></MatButton>
+      <div className="flex flex-col">
+        <MatButton onClick={()=>{
+          const name: string | undefined= inputRef.current?.value;
+          if (name) {
+            const todo: TodoItem = {name};
+            // setTodoItems((prev)=>[todo,...prev]);
+            setTodoItems([todo,...todoItems]);
+            // setTodoItems([todo,...todoItems]);
+          }
+        }}></MatButton>
+      </div>
       <input ref={inputRef}></input>
 
-      <div><TodoListComponent list={todoItems}/></div>
+      <TodoListComponent list={todoItems}/>
       {/*ask fofr name and desc and call setTodoItems and add rhe new itm to the end*/}
     </div>
   );
