@@ -1,4 +1,4 @@
-import { useState, useRef, SetStateAction } from "react";
+import { useState, useRef } from "react";
 import { TodoListComponent, TodoItem } from "./components/ToDo";
 import MatButton from "./components/MatButton";
 import { TextField } from "@mui/material";
