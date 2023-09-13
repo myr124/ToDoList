@@ -4,6 +4,7 @@ import MatButton from "./components/MatButton";
 import { TextField } from "@mui/material";
 
 const App = () => {
+  const [id, setId] = useState(0);
   const [text, setText] = useState("");
   const [todoItems, setTodoItems] = useState<TodoItem[]>([]);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -21,15 +22,20 @@ const App = () => {
         <MatButton onClick={()=>{
           const name: string | undefined= text;
           if (name) {
-            const todo: TodoItem = {name};
+            const todo: TodoItem = {
+              id: id,
+              name,
+              checked: false
+            };
             // setTodoItems((prev)=>[todo,...prev]);
             setTodoItems([todo,...todoItems]);
+            setId(id+1);
             // setTodoItems([todo,...todoItems]);
           }
         }}></MatButton>
       </div>
-      <TextField id="outlined-basic" label="Outlined" variant="outlined" onChange={(e)=>setText(e.target.value)}ref={inputRef}></TextField>
-      <TodoListComponent list={todoItems}/>
+      <TextField id="outlined-basic" label="Text" variant="outlined" onChange={(e)=>setText(e.target.value)}ref={inputRef}></TextField>
+      <TodoListComponent list={todoItems} setList={setTodoItems}/>
       {/*ask fofr name and desc and call setTodoItems and add rhe new itm to the end*/}
     </div>
   );
